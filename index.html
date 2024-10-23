@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-commerce de Utilidades</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header>
+        <div class="content">
+            <nav>
+                <p class="brand">LOGO<strong>VARIEDADES</strong></p>
+                <ul>
+                    <li><a href="#catalog">Produtos</a></li>
+                    <li><a href="#about">Sobre</a></li>
+                </ul>
+            </nav>
+            <div class="header-block">
+                <div class="text">
+                    <h2>Produtos para todos os momentos</h2>
+                    <p>
+                        Descubra nossa linha completa de utilidades, brinquedos, vidros, importados e muito mais. Tudo o que você precisa para o seu dia a dia!
+                    </p>
+                </div>
+                <img src="images/plastic-container.png" alt="Produtos Diversos" />
+            </div>
+        </div>
+    </header>
+
+    <!-- Botão flutuante para o carrinho de compras -->
+    <div class="floating-cart-button">
+        <button id="toggle-cart">
+            <img src="images/carrinho-de-compras.png" alt="Carrinho" />
+        </button>
+    </div>
+
+    <!-- Carrinho de Compras -->
+    <div id="cart-container" style="display: none;">
+        <h3>Carrinho de Compras</h3> <!-- Título do carrinho -->
+        <ul id="cart-items"></ul> <!-- Lista onde os itens do carrinho serão exibidos -->
+        <div>
+            <strong>Total: R$<span id="cart-total">0.00</span></strong> <!-- Exibe o total do carrinho -->
+        </div>
+        <button id="finalizar-compra">Finalizar Compra</button> <!-- Botão para finalizar a compra -->
+    </div>
+
+    <section class="catalog" id="catalog">
+        <div class="content">
+            <div class="title-wrapper-catalog"></div>
+
+            <!-- Filtros de Produtos -->
+            <div class="filter-btns">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="utilidades">Utilidades em Geral</button>
+                <button class="filter-btn" data-filter="plasticos">Plásticos</button>
+                <button class="filter-btn" data-filter="vidros">Vidros</button>
+                <button class="filter-btn" data-filter="importados">Importados</button>
+                <button class="filter-btn" data-filter="brinquedos">Brinquedos</button>
+                <button class="filter-btn" data-filter="material_escolar">Material Escolar</button>
+            </div>
+
+            <div class="card-wrapper">
+                <!-- Produto - Utilidades -->
+                <div class="card-item utilidades active">
+                    <img src="images/plastic-produto1.png" alt="Produto Utilidades" />
+                    <div class="card-content">
+                        <h3>Produto Utilidade</h3>
+                        <p>Praticidade para organizar sua casa e rotina.</p>
+                        <p class="price">R$ 15,00</p>
+                        <button type="button" class="add-to-cart" 
+                                data-product-id="1" 
+                                data-product-name="Produto Utilidade" 
+                                data-product-price="15.00">Eu quero esse!</button>
+                    </div>
+                </div>
+            
+                <!-- Produto - Plásticos -->
+                <div class="card-item plasticos active">
+                    <img src="images/plastic-container.png" alt="Produto Plástico" />
+                    <div class="card-content">
+                        <h3>Produto Plástico</h3>
+                        <p>Ideal para armazenamento seguro de alimentos.</p>
+                        <p class="price">R$ 10,00</p>
+                        <button type="button" class="add-to-cart" 
+                                data-product-id="2" 
+                                data-product-name="Produto Plástico" 
+                                data-product-price="10.00">Eu quero esse!</button>
+                    </div>
+                </div>
+            
+                <!-- Produto - Vidros -->
+                <div class="card-item vidros active">
+                    <img src="images/Vidro.png" alt="Produto de Vidro" />
+                    <div class="card-content">
+                        <h3>Produto de Vidro</h3>
+                        <p>Design sofisticado e durabilidade para sua cozinha.</p>
+                        <p class="price">R$ 25,00</p>
+                        <button type="button" class="add-to-cart" 
+                                data-product-id="3" 
+                                data-product-name="Produto de Vidro" 
+                                data-product-price="25.00">Eu quero esse!</button>
+                    </div>
+                </div>
+            
+                <!-- Produto - Importados -->
+                <div class="card-item importados active">
+                    <img src="images/relogio.png" alt="Produto Importado" />
+                    <div class="card-content">
+                        <h3>Produto Importado</h3>
+                        <p>Exclusividade e qualidade de produtos internacionais.</p>
+                        <p class="price">R$ 30,00</p>
+                        <button type="button" class="add-to-cart" 
+                                data-product-id="4" 
+                                data-product-name="Produto Importado" 
+                                data-product-price="30.00">Eu quero esse!</button>
+                    </div>
+                </div>
+            
+                <!-- Produto - Brinquedos -->
+                <div class="card-item brinquedos active">
+                    <img src="images/brinquedo.png" alt="Brinquedo" />
+                    <div class="card-content">
+                        <h3>Brinquedo Infantil</h3>
+                        <p>Segurança e diversão garantida para as crianças.</p>
+                        <p class="price">R$ 20,00</p>
+                        <button type="button" class="add-to-cart" 
+                                data-product-id="5" 
+                                data-product-name="Brinquedo Infantil" 
+                                data-product-price="20.00">Eu quero esse!</button>
+                    </div>
+                </div>
+            
+                <!-- Produto - Material Escolar -->
+                <div class="card-item material_escolar active">
+                    <img src="images/caderno.png" alt="Material Escolar" />
+                    <div class="card-content">
+                        <h3>Material Escolar</h3>
+                        <p>Essencial para o sucesso no seu dia a dia escolar.</p>
+                        <p class="price">R$ 5,00</p>
+                        <button type="button" class="add-to-cart" 
+                                data-product-id="6" 
+                                data-product-name="Material Escolar" 
+                                data-product-price="5.00">Eu quero esse!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="content">
+            <div class="title-wrapper-about">
+                <h3>Sobre nós</h3>
+            </div>
+            <div class="about-content">
+                <div class="left">
+                    <img src="images/about-plastic.png" alt="Sobre nós" />
+                </div>
+                <div class="right">
+                    <h3>Qualidade e variedade para todas as necessidades</h3>
+                    <p>
+                        Oferecemos uma vasta gama de produtos para facilitar sua vida, desde utilidades do dia a dia até brinquedos e itens de material escolar. Tudo com qualidade garantida e preços acessíveis.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="main">
+            <div class="content footer-links">
+                <div class="footer-social">
+                    <h4>Fique conectado</h4>
+                    <div class="social-icons">
+                        <img src="images/instagram.png" alt="Instagram" />
+                        <img src="images/facebook.png" alt="Facebook" />
+                    </div>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contato</h4>
+                    <p>+55 77 99999999</p>
+                    <p>contato@email</p>
+                    <p>Nome da Rua, Licínio de Almeida BA</p>
+                </div>
+            </div>
+        </div>
+        <div class="last">Josias Cavalcante 2024 - e-commerce</div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

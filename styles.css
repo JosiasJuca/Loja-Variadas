@@ -1,0 +1,530 @@
+/* Font importing */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+/* Reseting CSS rules */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: "Roboto", sans-serif;
+}
+
+:root {
+  --orange: #f86bb9;
+  --blue: #81004b;
+  --gray: #f2f7f6;
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Header Styles */
+header {
+  width: 100%;
+  height: 500px;
+  background: var(--orange);
+}
+
+.content {
+  max-width: 1000px;
+  min-width: 300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+nav {
+  width: 100%;
+  height: 125px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  font-size: 24px;
+  color: var(--blue);
+  cursor: pointer;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+}
+
+nav ul li {
+  list-style: none;
+  padding: 10px;
+}
+
+nav ul li a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  color: #00285f83; /* Consider adding a variable for this color */
+}
+
+nav ul button {
+  border: 1px solid var(--blue);
+  background: transparent;
+  padding: 8px 40px;
+  cursor: pointer;
+  margin-left: 30px;
+  color: var(--blue);
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+nav ul button:hover {
+  transition: background 0.6s, color 0.6s;
+  background: var(--blue);
+  color: white;
+}
+
+/* Header Block */
+.content .header-block {
+  max-width: 1000px;
+  min-width: 300px;
+  height: 450px;
+  background: var(--blue);
+  border-radius: 8px;
+  box-shadow: 1px 0px 10px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 10;
+  padding: 10px;
+}
+
+.header-block img {
+  max-width: 40%; /* Mantém a imagem em 40% do contêiner */
+  height: auto; /* Mantém a proporção da imagem */
+  position: absolute;
+  right: 2%;
+  bottom: 2%; /* Posição padrão para dispositivos maiores */
+  transition: bottom 0.3s ease; /* Adiciona uma transição suave */
+}
+
+.header-block .text {
+  position: absolute;
+  bottom: 30%;
+  left: 15%;
+  z-index: 2; /* Garante que o texto fique na frente da imagem */
+  color: white;
+  text-align: right;
+}
+
+.header-block .text h2,
+.header-block .text p {
+  margin: 0; /* Remove margens para melhor controle do layout */
+}
+
+.header-block .text h2 {
+  margin-bottom: 20px;
+  transform: translateX(-20px);
+  transition: transform 0.5s;
+}
+
+.header-block .text p {
+  max-width: 280px;
+  transform: translateX(-20px);
+  transition: transform 0.4s;
+}
+
+/* Responsividade */
+@media (max-width: 576px) {
+  .header-block {
+    height: auto; /* Permite que o header se ajuste automaticamente */
+    padding: 20px 10px; /* Adiciona mais espaçamento em dispositivos móveis */
+  }
+
+  .header-block img {
+    max-width: 70%; /* Aumenta a largura da imagem em dispositivos móveis */
+    position: relative; /* Muda para posição relativa para evitar sobreposição */
+    margin: 0 auto; /* Centraliza a imagem */
+    display: block; /* Certifica-se de que a imagem seja um bloco */
+    bottom: 20%; /* Levanta a imagem um pouco mais para cima */
+  }
+
+  .header-block .text {
+    position: relative; /* Muda para posição relativa */
+    bottom: auto; /* Remove a posição inferior do texto */
+    left: 0; /* Alinha o texto para a esquerda */
+    text-align: left; /* Alinha o texto à esquerda */
+    padding: 0; /* Remove padding para melhor ajuste */
+    margin-top: 20px; /* Adiciona espaço acima do texto */
+  }
+}
+
+/* Product Catalog */
+.title-wrapper-catalog {
+  margin-top: 200px;
+  padding-bottom: 20px;
+}
+
+section .card-wrapper {
+  max-width: 1000px;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  grid-gap: 30px;
+  padding-top: 50px;
+}
+
+.card-content {
+  height: 50%; /* Ajuste a altura do conteúdo */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza o conteúdo */
+  justify-content: space-around; /* Centraliza verticalmente */
+}
+
+.card-item {
+  height: 350px; /* Altura fixa para todos os cartões */
+  background: var(--gray);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza os itens horizontalmente */
+  justify-content: space-between; /* Ajusta o espaçamento vertical */
+  text-align: center; /* Adicionado para centralizar o texto */
+}
+
+.card-item img {
+  max-width: 100%; /* Garante que a imagem não exceda a largura do cartão */
+  max-height: 120px; /* Limita a altura da imagem */
+  object-fit: cover; /* Mantém a proporção da imagem sem esticá-la */
+  margin: 15px auto 0; /* Adiciona uma margem de 10px no topo, centraliza horizontalmente */
+  display: block; /* Para garantir que a imagem se comporte corretamente */
+}
+
+.card-item h4,
+.card-item p {
+  width: 90%;
+}
+
+.card-item p {
+  font-style: italic;
+  color: #00000070;
+}
+
+.card-item button {
+  width: 90%;
+  padding: 7px 0;
+  border: none;
+  background: var(--blue);
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-bottom: -30px;
+}
+
+.card-item button:hover {
+  background: #dedede;
+  color: var(--blue);
+}
+
+/* Carrinho */
+#cart-container {
+  background: #f2f2f2;
+  padding: 20px;
+  width: 80%; /* Aumenta a largura em telas menores */
+  max-width: 300px; /* Limite a largura máxima */
+  border-radius: 8px;
+  position: fixed;
+  top: 80px; /* Ajusta a posição do carrinho */
+  right: 10px; /* Margem do lado */
+  z-index: 1000; /* Certifique-se de que o carrinho esteja sobre outros elementos */
+  display: block; /* Mude de 'none' para 'block' para exibir por padrão */
+  visibility: visible; /* Garante que o carrinho esteja visível */
+  transition: visibility 0.3s ease, opacity 0.3s ease; /* Para transições suaves */
+  opacity: 1; /* Garante que o carrinho seja opaco */
+}
+
+/* Adicione um estado de ocultação se necessário, por exemplo, ao clicar em um botão */
+#cart-container.hidden {
+  display: none; /* Permite ocultar o carrinho quando necessário */
+  opacity: 0; /* Fica invisível quando escondido */
+}
+
+#cart-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#cart-items li {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  display: flex; /* Adiciona flex para melhor alinhamento */
+  justify-content: space-between; /* Alinha texto e botão */
+  align-items: center; /* Alinha verticalmente */
+}
+
+#finalizar-compra {
+  background: var(--orange);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+  width: 100%; /* Botão de checkout ocupa toda a largura */
+}
+
+
+/* Estilos para os botões do carrinho */
+.cart-button {
+  width: 30px; /* Largura do botão */
+  height: 30px; /* Altura do botão */
+  font-size: 20px; /* Tamanho da fonte */
+  border: none; /* Sem borda */
+  border-radius: 5px; /* Bordas arredondadas */
+  cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+  margin-right: 5px; /* Espaço à direita de cada botão */
+}
+
+/* Estilos para o botão de remover (X) */
+.cart-button.remove {
+  background-color: red; /* Cor de fundo vermelha */
+  color: white; /* Cor do texto em branco */
+}
+
+/* Estilos para os botões de aumentar e diminuir */
+.cart-button.increase,
+.cart-button.decrease {
+  background-color: green; /* Cor de fundo verde */
+  color: white; /* Cor do texto em branco */
+}
+
+/* Estilos para os itens do carrinho */
+#cart-items li {
+  margin-bottom: 10px; /* Espaçamento entre os itens */
+}
+
+/* Filtros de Produtos */
+.filter-btns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.filter-btn {
+  padding: 10px 15px;
+  border: 1px solid #333;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  border-radius: 5px;
+  flex: 1;
+  text-align: center;
+  margin: 5px;
+}
+
+.filter-btn.active {
+  background-color: #333;
+  color: #fff;
+}
+
+.card-item {
+  display: none; /* Oculta todos os itens por padrão */
+}
+
+.card-item.active {
+  display: block; /* Mostra os itens ativos com a classe "active" */
+}
+
+/* About Section */
+.about {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 10px;
+}
+
+.about-content {
+  max-width: 1000px;
+  min-width: 300px;
+  background: #dedede3b;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left {
+  width: 25%;
+  min-width: 300px;
+  background: #000000a1;
+  border-radius: 8px;
+}
+
+.left img {
+  width: 300px;
+  margin-top: 80px;
+}
+
+.right {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-top: 10%;
+}
+
+.right h3 {
+  text-align: right;
+  width: 90%;
+  margin-bottom: 20px;
+}
+
+.right p {
+  max-width: 90%;
+  font-size: 1em;
+  letter-spacing: 2px;
+  text-align: right;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column; /* Muda para coluna em telas menores */
+    align-items: center; /* Centraliza os itens */
+  }
+
+  .left {
+    width: 100%; /* Faz a parte esquerda ocupar toda a largura */
+    margin-bottom: 20px; /* Adiciona espaço entre a seção esquerda e a direita */
+  }
+
+  .left img {
+    width: 80%; /* Faz a imagem ser responsiva */
+    margin: 0 auto; /* Centraliza a imagem */
+  }
+
+  .right {
+    width: 100%; /* Faz a parte direita ocupar toda a largura */
+    align-items: center; /* Centraliza o conteúdo */
+    padding-top: 20px; /* Adiciona mais espaço acima */
+    text-align: center; /* Alinha o texto ao centro */
+  }
+
+  .right h3 {
+    text-align: center; /* Alinha o título ao centro */
+    width: 100%; /* Ajusta a largura para 100% */
+  }
+}
+
+
+/* Footer */
+footer {
+  width: 100%;
+}
+
+footer .main {
+  background: var(--orange);
+  padding: 20px 10px;
+}
+
+.footer-links {
+  max-width: 1000px;
+  min-width: 300px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.footer-social,
+.footer-contact {
+  color: #81004b;
+}
+
+.footer-links h4 {
+  margin-bottom: 10px;
+}
+
+.main .footer-social img {
+  width: 32px;
+  height: 32px;
+}
+
+footer .last {
+  height: 50px;
+  background: var(--blue);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  nav ul li {
+    display: none;
+  }
+
+  .header-block {
+    height: auto; /* Permite que o header se ajuste automaticamente */
+    padding: 20px 10px; /* Adiciona mais espaçamento em dispositivos móveis */
+  }
+
+  .header-block img {
+    max-width: 70%; /* Aumenta a largura da imagem em dispositivos móveis */
+    position: relative; /* Muda para posição relativa para evitar sobreposição */
+    margin: 0 auto; /* Centraliza a imagem */
+    display: block; /* Certifica-se de que a imagem seja um bloco */
+    bottom: 2%; /* Levanta a imagem um pouco mais para cima */
+  }
+
+  .header-block .text {
+    position: relative; /* Muda para posição relativa */
+    bottom: auto; /* Remove a posição inferior do texto */
+    left: 30px; /* Alinha o texto para a esquerda */
+    text-align: left; /* Alinha o texto à esquerda */
+    padding: 0; /* Remove padding para melhor ajuste */
+    margin-top: 20px; /* Adiciona espaço acima do texto */
+  }
+}
+
+
+/* Botão flutuante de carrinho */
+.floating-cart-button {
+  position: fixed;
+  bottom: 20px; /* Distância da parte inferior da tela */
+  right: 20px; /* Distância da lateral direita da tela */
+  z-index: 1000; /* Certifica-se de que esteja sobre outros elementos */
+}
+
+.floating-cart-button button {
+  background-color: var(--blue); /* Cor de fundo do botão */
+  border: none;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease;
+}
+
+.floating-cart-button button:hover {
+  background-color: var(--orange);
+}
+
+.floating-cart-button img {
+  width: 24px;
+  height: 24px;
+}
